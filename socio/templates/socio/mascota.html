@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+{% block title %} Mascotas {% endblock %}
+{% block body %}
+<h1>Mascotas</h1>
+<div class="row">
+{% for m in mascotas %}
+
+<div class="col-4">
+    <div class="card" style="width: 18rem;">
+        <img src="{{m.fotografia}}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{m.nombre}}</h5>
+        <p class="card-text">{{m.descripcion}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{m.raza}}</li>
+        <li class="list-group-item">{{m.estado}}</li>
+      
+        </ul>
+        <div class="card-body">
+        <a href="edicion/{{m.codigo}}" class="btn btn-info">Editar</a>
+        <a href="eliminar/{{m.codigo}}" class="btn btn-danger">Eliminar</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

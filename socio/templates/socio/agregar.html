@@ -1,0 +1,22 @@
+{% block body %}
+<h1> Editar mascota </h1>
+
+<div class="card">
+    <div class="card-body">
+        <form action="/editarMascota" method="POST">{% csrf_token %} 
+            <div class="form-group">
+                <input type="text" id="idcodigo" name="idcodigo" value = "{{mascota.codigo}}" placeholder="Codigo" class="form-control" >
+                <input type="text" id="imagentxt" name="imagentxt" value="{{mascota.fotografia}}" class="form-control" placeholder="link imagen" required>
+                <input type="text" id="nombretxt" name="nombretxt" value ="{{mascota.nombre}}" class="form-control" placeholder="nombre" required>
+                <input type="text" id="descripciontxt" name="descripciontxt" value = "{{mascota.descripcion}}" class="form-control" placeholder="descripcion">
+                <input type="text" id="tipotxt" name="tipotxt" value = "{{mascota.raza}}" class="form-control" placeholder="tipo mascota">
+                <input type="text" id="estadotxt" name="estadotxt" value="{{mascota.estado}}" class="form-control" placeholder="disponible, rescatado o adoptado">
+            </div>
+            <div class="form-group">
+                <button type="btn btn-success btn-block text-white">guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
