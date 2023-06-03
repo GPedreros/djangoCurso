@@ -3,17 +3,35 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="/editarMascota" method="POST">{% csrf_token %} 
+        <form action="/editar" method="POST">{% csrf_token %} 
             <div class="form-group">
-                <input type="text" id="idcodigo" name="idcodigo" value = "{{mascota.codigo}}" placeholder="Codigo" class="form-control" >
-                <input type="text" id="imagentxt" name="imagentxt" value="{{mascota.fotografia}}" class="form-control" placeholder="link imagen" required>
-                <input type="text" id="nombretxt" name="nombretxt" value ="{{mascota.nombre}}" class="form-control" placeholder="nombre" required>
-                <input type="text" id="descripciontxt" name="descripciontxt" value = "{{mascota.descripcion}}" class="form-control" placeholder="descripcion">
-                <input type="text" id="tipotxt" name="tipotxt" value = "{{mascota.raza}}" class="form-control" placeholder="tipo mascota">
-                <input type="text" id="estadotxt" name="estadotxt" value="{{mascota.estado}}" class="form-control" placeholder="disponible, rescatado o adoptado">
+                <div class="mb-3">
+                    <label for="formeditar" class="form-label">ID: </label>
+                    <input type="text" id="idcodigo" name="idcodigo" value = "{{mascota.codigo}}" placeholder="Codigo" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="formeditar1" class="form-label">Link de la imagen: </label>
+                    <input type="text" id="imagentxt" name="imagentxt" value="{{mascota.fotografia}}" class="form-control" placeholder="link imagen" required>
+                </div>
+                <div class="mb-3">
+                    <label for="formeditar2" class="form-label">Nombre: </label>
+                    <input type="text" id="nombretxt" name="nombretxt" value ="{{mascota.nombre}}" class="form-control" placeholder="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="formeditar3" class="form-label">Descripcion: </label>
+                    <input type="text" id="descripciontxt" name="descripciontxt" value = "{{mascota.descripcion}}" class="form-control" placeholder="descripcion">
+                </div> 
+                <div class="mb-3">
+                    <label for="formeditar4" class="form-label">Especie: </label>
+                    <input type="text" id="tipotxt" name="tipotxt" value = "{{mascota.raza}}" class="form-control" placeholder="tipo mascota">
+                </div>
+                <div class="mb-3">
+                    <label for="formeditar5" class="form-label">Estado: </label>
+                    <input type="text" id="estadotxt" name="estadotxt" value="{{mascota.estado}}" class="form-control" placeholder="disponible, rescatado o adoptado">
+                </div>
             </div>
             <div class="form-group">
-                <button type="btn btn-success btn-block text-white">guardar</button>
+                <button type="btn btn-success btn-block text-white">Guardar</button>
             </div>
         </form>
     </div>
